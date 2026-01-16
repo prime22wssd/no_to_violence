@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>No a la Violencia</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(180deg, #c7c5d6, #9f9bbd);
+        }
+
+        .inicio {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .mensaje {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #111;
+            text-shadow: 0 0 10px rgba(255,255,255,0.8);
+            margin-bottom: 20px;
+
+            opacity: 0;
+            animation: textoEntrada 1.2s ease forwards;
+        }
+
+        @keyframes textoEntrada {
+            from {
+                opacity: 0;
+                transform: translateY(-40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .tenor {
+            width: 320px;
+            max-width: 90%;
+            margin-bottom: 25px;
+
+            opacity: 0;
+            animation: gifEntrada 1.2s ease forwards;
+            animation-delay: 0.4s;
+        }
+
+        @keyframes gifEntrada {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .boton {
+            margin-top: 20px;
+            padding: 15px 35px;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 30px;
+            background: #ff3b3b;
+            color: white;
+            cursor: pointer;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+
+            transition: transform 0.3s, box-shadow 0.3s;
+
+            opacity: 0;
+            animation: botonEntrada 1.2s ease forwards;
+            animation-delay: 0.8s;
+        }
+
+        @keyframes botonEntrada {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .boton:hover {
+            transform: scale(1.08);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+        }
+
+        .resolver {
+            min-height: 100vh;
+            padding: 60px 20px;
+            background: #f4f4f4;
+            text-align: center;
+        }
+
+        .resolver h2 {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            color: #222;
+        }
+
+        .pasos {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .paso-btn {
+            background: #ff3b3b;
+            color: white;
+            border: none;
+            padding: 20px 30px;
+            font-size: 1.1rem;
+            border-radius: 15px;
+            cursor: pointer;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .paso-btn:hover {
+            transform: scale(1.08);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+        }
+
+        .paso-btn:active {
+            transform: scale(0.95);
+        }
+
+        .mensaje-dinamico {
+            margin-top: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 25px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+
+            font-size: 1.2rem;
+            color: #333;
+
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s, transform 0.5s;
+        }
+
+        .mensaje-dinamico.mostrar {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .final {
+            min-height: 100vh;
+            padding: 60px 20px;
+            background: linear-gradient(180deg, #9f9bbd, #6f6aa8);
+            text-align: center;
+            color: white;
+        }
+
+        .final h2 {
+            font-size: 2.5rem;
+            margin-bottom: 25px;
+        }
+
+        .final p {
+            max-width: 650px;
+            margin: auto;
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .final button {
+            padding: 15px 35px;
+            font-size: 1.1rem;
+            border: none;
+            border-radius: 30px;
+            background: #ff3b3b;
+            color: white;
+            cursor: pointer;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            transition: transform 0.3s;
+        }
+
+        .final button:hover {
+            transform: scale(1.08);
+        }
+
+        .compromiso {
+            margin-top: 30px;
+            font-size: 1.3rem;
+            opacity: 0;
+            transition: opacity 0.6s;
+        }
+
+        .compromiso.mostrar {
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+
+<section class="inicio">
+    <div class="mensaje">NO A LA VIOLENCIA</div>
+
+    <div class="tenor">
+        <div class="tenor-gif-embed"
+             data-postid="12358308896192153975"
+             data-share-method="host"
+             data-aspect-ratio="0.751004"
+             data-width="100%">
+        </div>
+    </div>
+
+    <a href="#resolver">
+        <button class="boton">¿Cómo resolverlo?</button>
+    </a>
+</section>
+
+<section class="resolver" id="resolver">
+    <h2>¿Cómo prevenir la violencia?</h2>
+
+    <div class="pasos">
+        <button class="paso-btn" onclick="mostrarMensaje('dialogo')">🗣️ Diálogo</button>
+        <button class="paso-btn" onclick="mostrarMensaje('empatia')">🤝 Empatía</button>
+        <button class="paso-btn" onclick="mostrarMensaje('educacion')">🏫 Educación</button>
+        <button class="paso-btn" onclick="mostrarMensaje('respeto')">🕊️ Respeto</button>
+        <button class="paso-btn" onclick="mostrarMensaje('solidaridad')">❤️ Solidaridad</button>
+        <button class="paso-btn" onclick="mostrarMensaje('autocontrol')">🧠 Autocontrol</button>
+        <button class="paso-btn" onclick="mostrarMensaje('familia')">👨‍👩‍👧 Apoyo familiar</button>
+    </div>
+
+    <div id="mensaje-dinamico" class="mensaje-dinamico"></div>
+
+    <!-- BOTÓN FINAL AGREGADO -->
+    <br><br>
+    <a href="#final">
+        <button class="paso-btn">🧠 ¿Y qué entendimos?</button>
+    </a>
+</section>
+
+<section class="final" id="final">
+    <h2>Reflexión Final</h2>
+
+    <p>
+        La violencia no soluciona los problemas.
+        El respeto, el diálogo y la empatía son el camino
+        para una convivencia sana y una sociedad mejor.
+    </p>
+
+    <button onclick="mostrarCompromiso()">🤍 Me comprometo a no usar violencia</button>
+
+    <div id="compromiso" class="compromiso">
+        ✨ El cambio comienza contigo.
+    </div>
+</section>
+
+<script>
+    function mostrarMensaje(tipo) {
+        const mensaje = document.getElementById("mensaje-dinamico");
+
+        const textos = {
+            dialogo: "🗣️ El diálogo permite resolver conflictos con respeto.",
+            empatia: "🤝 La empatía nos ayuda a comprender a los demás.",
+            educacion: "🏫 La educación forma valores para convivir en paz.",
+            respeto: "🕊️ El respeto es la base de una sociedad sana.",
+            solidaridad: "❤️ La solidaridad fortalece la unión.",
+            autocontrol: "🧠 El autocontrol evita reacciones violentas.",
+            familia: "👨‍👩‍👧 La familia enseña valores fundamentales."
+        };
+
+        mensaje.innerHTML = textos[tipo];
+        mensaje.classList.add("mostrar");
+    }
+
+    function mostrarCompromiso() {
+        document.getElementById("compromiso").classList.add("mostrar");
+    }
+</script>
+
+<script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+
+</body>
+</html>
+
+
+
+
